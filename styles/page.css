@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 20px;
+  background:black;
+  color:azure;
+  /* TODO Add dark mode styles here. */
+}
+
+.light-mode {
+     padding: 20px;
+  background:rgb(184, 190, 249);
+  color:rgb(0, 0, 0);
+  
+  /* TODO Add light mode styles here. */
+}
+
+.center {
+  width: 940px;
+  padding: 20px;
+  border: 1px dotted white;
+  /* TODO Add margins to center. */
+  margin-left:auto;
+  margin-right:auto;
+}
+.poem {
+  text-align: center;
+}
+
+footer {
+  /* TODO Add styles */
+   color:pink;
+}
+
+.light-mode footer {
+  /* TODO Add footer light mode styles here. */
+   color:rgb(111, 27, 132);
+}
