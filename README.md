@@ -72,53 +72,57 @@ https://kailyn5in.github.io/project2
    1. You should add the following HTML elements:
       - <!doctype html>
       - html
-      - head
-        - title
-      - body
-        - header
-          - div
+        - head
+          - title
+        - body
+          - header
             - div
-              - img
-              - b
-            - menu
-              - a
-              - button
-        - main
-          - h1
-        - footer
-          - div
-            - p
-        - script
+              - div
+                - img
+                - b
+              - menu
+                - a
+                - button
+          - main
+            - h1
+          - footer
+            - div
+              - p
+          - script
 
       > Be sure to use closing tags when needed. Be sure to nest elements correctly. (“nest” means to put one thing inside another.)
 
       We are using 5 new HTML elements:
-      - `menu` A list of links that are a **menu** of choices for _page navigation_. (_navigate_ means to move around inside something with a plan or purpose. You can navigate the ocean, navigate a website, or navigate a city.)
-      - `main` Everything inside this element is the page’s **main** content (the most important information).
-      - `header` Just like the page has a `footer`, it can also have a **header**. We usually put the website name and the website navigation inside the `header`.
-      - `div` A content **division**. A generic box with no default styles. (Compare with the `p` element which has margins by default.) Inside the `body` element, a `div` can contain any other HTML element.
-      - `b` Makes text **bold**.
+      - `<menu>` A list of links that are a **menu** of choices for _page navigation_. (_navigate_ means to move around inside something with a plan or purpose. You can navigate the ocean, navigate a website, or navigate a city.)
+      - `<main>` Everything inside this element is the page’s **main** content (the most important information).
+      - `<header>` Just like the page has a `<footer>`, it can also have a **header**. We usually put the website name and the website navigation inside the `<header>`.
+      - `<div>` A content **division**. A generic box with no default styles. (Compare with the `<p>` element which has margins by default.) A `<div>` can contain any other HTML element (except `<html>`, `<head>` and `<body>`.)
+      - `<b>` Makes text **bold**.
 
-   2. Inside the `title` and `h1` elements, add the text: `Project 2: A Clean Slate`
+        > Bonus element: Related to `<b>`, the `<i>` element makes text _italic_.
 
-   3. Inside the `b` element, add your name.
+   2. Inside the `<title>` and `<h1>` elements, add the text: `Project 2: A Clean Slate`
 
-   4. For the `img` element, use the `avatar.png` file that is in your project’s `images` folder.
+   3. Inside the `<b>` element, add your name.
 
-   5. Inside the `a` link element in the `menu`, add the name of your previous project (week1 or week2). And add the URL to the website for that project as an attribute on the `a` element.
+   4. For the `<img>` element, use the `avatar.png` file that is in your project’s `images` folder.
+
+      > Do you remember what attribute to use on the image element? If you don’t remember, look at your last project or ask for help.
+
+   5. Inside the `<a>` link element in the `<menu>`, add the name of your previous project (week1 or week2). And add the URL to the website for that project as an attribute on the `<a>` element.
 
       > Do you remember what attribute to use on the link element? If you don’t remember, look at your last project or ask for help.
 
       > What’s the URL for your first project’s website? \_Hint: it’s the same as the URL at the top of this file, but with `project2` replaced with the name of your first project.
 
-   6. Inside the `button` element in the `menu`, add the text: `Light mode`. Give that button an `id` attribute of `color-mode-button`.
+   6. Inside the `<button>` element in the `<menu>`, add the text: `Light mode`. Give that button an `id` attribute of `color-mode-button`.
 
-   7. Inside the footer’s `p` element, add today’s date.
+   7. Inside the footer’s `<p>` element, add today’s date.
 
-   8. We will leave the `script` element empty for now.
+   8. We will leave the `<script>` element empty for now.
 
 3. **Add some content** to the page.
-   1. Just underneath the `h1`, copy and paste the following HTML:
+   1. Just underneath the `<h1>`, copy and paste the following HTML:
 
       ```html
       <p>
@@ -183,23 +187,23 @@ https://kailyn5in.github.io/project2
 
       > You can copy and paste the CSS above.
 
-   3. Add a dark background and light text to our page.css using the **element selector**: `body`
+   3. Add a dark background and light text to our `page.css` using the **element selector**: `body`
 
    4. Add a `<link>` on our `index.html` file that will load our `page.css` styles.
 
-      > Where does the `link` element go in our HTML file?
+      > Where does the `<link>` element go in our HTML file?
 
-   5. Find the `p` after our `A poem` heading. Add a `class` attribute set to `poem`.
+   5. Find the `<p>` after our `A poem` heading. Add a `class` attribute set to `poem`.
 
       > Notice how the styling of the poem changes. What CSS property made that change?
 
-   6. Add a background color to the `footer` element.
+   6. Add a background color to the `<footer>` element.
 
-   7. Add light mode styles to the `page.css` file. When we write the JavaScript later, the `light-mode` class will be added to the `body`.
+   7. Add light mode styles to the `page.css` file. When we write the JavaScript later, the `light-mode` class will be added to the `<body>`.
 
       > Notice we have this rule: `.light-mode {}` This allows us to write light mode styles in the same file as our default dark mode styles.
 
-      > We also have a `.light-mode footer {}` rule. This allows us to change the light mode styling of `<footer>` right next its dark mode styling.
+      > We also have a `.light-mode footer {}` rule. This **descendant selector** allows us to change the light mode styling of `<footer>` right next its dark mode styling.
 
 5. Learn about CSS’s **box model**:
    1. Here’s a diagram showing `margin`, `border`, and `padding` CSS properties.
@@ -231,18 +235,18 @@ https://kailyn5in.github.io/project2
 
       ![Using "auto" for lengths](images/auto-value.png)
 
-   4. Open our `index.html`. Add a `center` **class attribute** to `div` element inside the `footer` element.
+   4. Open our `index.html`. Add a `center` **class attribute** to `<div>` element inside the `<footer>` element.
 
    5. Open our `page.css` file. Edit the `.center` rule so that the box is centered. _Hint: what properties do we need to add to that rule? Re-read step C above._
 
 6. **Add color mode JavaScript.**
    1. Create a `scripts` folder and then create a `color-mode.js` file inside `scripts`.
 
-   2. In the `index.html` file, add a `class` attribute to the `body` element using the value of `dark-mode`.
+   2. In the `index.html` file, add a `class` attribute to the `<body>` element using the value of `dark-mode`.
 
       > _Why did we use a `class` instead of an `id` like last time? Is “Dark mode” an unique name (`id`) or a category (`class`)? What do you think?_
 
-   3. In the `index.html` file, edit the `script` element by adding a `src` attribute that points at our new `color-mode.js`
+   3. In the `index.html` file, edit the `<script>` element by adding a `src` attribute that points at our new `color-mode.js`
 
    4. **Write the JavaScript to toggle color modes.** We will be writing all this JavaScript inside the `color-mode.js` file.
       1. Find the color button using `document.getElementById()`; the first parameter will be the `id` attribute on the `<button>`. Save the button element found to a variable named `button`.
@@ -259,12 +263,15 @@ https://kailyn5in.github.io/project2
 
              > The `classList` object has a `replace("old", "new")` function that can replace an old class with a new class. That function has two parameters; the first is the old class to be removed and the second is the new class to be added.
 
-         - In the `else` block, do the opposite as the `if` block.
+         - In the `else` block, do the opposite of the `if` block so that it turns _on_ dark mode.
 
          - After the `if`/`else` blocks, add this:
+
            ```javascript
            console.log("event =", event);
            ```
+
+         - We are finished defining our `toggleColorMode` function.
 
       3. Tell the `button` to use the `toggleColorMode` function when it is clicked.
          - We won’t be using HTML to do this. Last time we used the `onClick` attribute on `<button>`.
@@ -279,6 +286,8 @@ https://kailyn5in.github.io/project2
            // Run our function when the button is clicked.
            button.addEventListener("click", toggleColorMode);
            ```
+
+   5. Test this in the browser. If something isn't working, you can add some `console.log()` statements to help you debug (de🪲) or ask someone for help.
 
 ## Bonus features
 
@@ -332,16 +341,47 @@ If you have extra time, you should try out these other CSS properties.
 
    2. To prevent your content from going off the right edge of the browser window (and showing a horizontal scrollbar), use the `max-width` property in your `.center` rule instead of the `width` property.
 
-5. **Learn about `background` gradients!**
+5. **Learn about colors!**
+   1. We have used **color names** like `white` and `black`. The full list of color names sorted by hue can be seen on the interactive [sorted colors web page](https://enes.in/sorted-colors/).
 
-   1. Add this to our footer styles:
+   2. We can also use the **RGB color space** (`rgb` stands for red-green-blue) to define colors like this:
+
       ```css
-      background-image: linear-gradient(to bottom, darkslateblue, darkslategrey);
+      background-color: rgb(30% 20% 50% / 25%);
+      ```
+
+      The first three numbers are the amount of red, green, or blue in the color. The rgb colors can either be written as a percentage or as a number between 0-255.
+
+      The fourth number (after the slash) is the amount of transparency (allowing you to see what is underneath the element); `100%` means it fully covers any color behind and `0%` means it doesn’t cover any color behind it. This number can also be written as a decimal value between 0-1, for example, `0.5` is the same as `50%`.
+
+      It’s easier to play with these numbers to see what it does than to read about it. Try this [online RGB Color Picker](https://rgbcolorpicker.com).
+
+   3. The most advanced and interesting way to write colors is to use the **oklch color space** (`oklch` stands for okay👌-lightness-chroma-hue). the oklch color space closely matches how human eyes work and is more intuitive (once you learn how to use it.) It defines colors like this:
+
+      ```css
+      background-color: oklch(0.62 0.24 293 / 50%);
+      ```
+
+      - You can play with all the numbers by using this [online oklch color picker](https://oklch.com/).
+
+      - You can learn all about the oklch color space by reading this [blog post about oklch](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl).
+
+6. **Learn about `background` gradients!**
+   1. Add this to our footer styles:
+
+      ```css
+      background-image: linear-gradient(
+        to bottom,
+        darkslateblue,
+        darkslategrey
+      );
       ```
 
    2. You change the direction of the gradient with `to top`, `to left`, or `to right`.
 
-   3. There are many, _many_ other options. If you want to learn more, read the [CSS Tricks’ article about linear-gradient](https://css-tricks.com/almanac/functions/l/linear-gradient/).
+   3. Instead of color names, you can use any of the color methods described in the section above.
+
+   4. There are many, _many_ other options. If you want to learn more, read the [CSS Tricks’ article about linear-gradient](https://css-tricks.com/almanac/functions/l/linear-gradient/).
 
 <!-- Forces markdown to properly nest ordered lists. -->
 <style type="text/css">
