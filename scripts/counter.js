@@ -1,3 +1,4 @@
+//var
 let number = 0;
 let addonebutton = document.getElementById("counter-button");
 let counter = document.getElementById("counter");
@@ -13,21 +14,25 @@ let Sixbutton = document.getElementById("six-button");
 let Sevenbutton = document.getElementById("seven-button");
 let Eightbutton = document.getElementById("eight-button");
 let Ninebutton = document.getElementById("nine-button");
-let Tenbutton = document.getElementById("ten-button")
 
 
 
+//function
 function add1() {
     number = number + 1;
     counter.textContent = number;
 }
 
 function clear() {
-    number = number + 1;
+    number = 0;
     counter.textContent = number;
 }
 function minus() {
     number = number - 1;
+    counter.textContent = number;
+}
+function zore() {
+    number = 0;
     counter.textContent = number;
 }
 function one() {
@@ -67,10 +72,12 @@ function nine() {
     counter.textContent = number;
 }
 
-addonebutton.addEventListener("click", clear);
+//evenlistener
+addonebutton.addEventListener("click", add1);
 delbutton.addEventListener("click", clear);
 minusbutton.addEventListener("click", minus);
-Zerobutton.addEventListener("click", one);
+Zerobutton.addEventListener("click", zore);
+Onebutton.addEventListener("click", one)
 Twobutton.addEventListener("click", two);
 Threebutton.addEventListener("click", three);
 Fourbutton.addEventListener("click", four);
