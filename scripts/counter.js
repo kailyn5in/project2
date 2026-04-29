@@ -14,62 +14,75 @@ let Sixbutton = document.getElementById("six-button");
 let Sevenbutton = document.getElementById("seven-button");
 let Eightbutton = document.getElementById("eight-button");
 let Ninebutton = document.getElementById("nine-button");
+let Plusbotton=document.getElementById("plus-button");
+let Equalbotton=document.getElementById("equ-button");
+let SecondNumber=0;
 
 
 
 //function
+
+function show() {
+    counter.textContent =number;
+}
+function showanswer(){
+     counter.textContent =SecondNumber;
+}
+function Plus(){
+    number=number+"+"+number;
+    show(SecondNumber);
+}
 function add1() {
     number = number + 1;
-    counter.textContent = number;
+    show(number);
 }
-
 function clear() {
     number = 0;
-    counter.textContent = number;
+    show(number);
 }
 function minus() {
     number = number - 1;
-    counter.textContent = number;
+    show(number);
 }
 function zore() {
-    number = 0;
-    counter.textContent = number;
+    number = number*10+0;
+    show(number);
 }
 function one() {
-    number = 1;
-    counter.textContent = number;
+    number = number*10+1;
+    show(number);
 }
 function two() {
-    number = 2;
-    counter.textContent = number;
+    number = number*10+2;
+    show(number);
 }
 function three() {
-    number = 3;
-    counter.textContent = number;
+    number = number*10+3;
+    show(number);
 }
 function four() {
-    number = 4;
-    counter.textContent = number;
+    number = number*10+4;
+    show(number);
 }
 function five() {
-    number = 5;
-    counter.textContent = number;
+    number = number*10+5;
+    show(number);
 }
 function six() {
-    number = 6;
-    counter.textContent = number;
+    number = number*10+6;
+    show(number);
 }
 function seven() {
-    number = 7;
-    counter.textContent = number;
+    number = number*10+7;
+    show(number);
 }
 function eight() {
-    number = 8;
-    counter.textContent = number;
+    number = number*10+8;
+    show(number);
 }
 function nine() {
-    number = 9;
-    counter.textContent = number;
+    number = number*10+9;
+    show(number);
 }
 
 //evenlistener
@@ -86,3 +99,4 @@ Sixbutton.addEventListener("click", six);
 Sevenbutton.addEventListener("click", seven);
 Eightbutton.addEventListener("click", eight);
 Ninebutton.addEventListener("click", nine);
+Plusbutton.addEventListener("click", Plus);
