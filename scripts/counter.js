@@ -3,7 +3,7 @@ let number = 0;
 let addonebutton = document.getElementById("counter-button");
 let counter = document.getElementById("counter");
 let delbutton = document.getElementById("clear-button");
-let minu1sbutton = document.getElementById("minus1-button");
+let minus1button = document.getElementById("minus1-button");
 let Zerobutton = document.getElementById("zero-button");
 let Onebutton = document.getElementById("one-button");
 let Twobutton = document.getElementById("two-button");
@@ -16,11 +16,15 @@ let Eightbutton = document.getElementById("eight-button");
 let Ninebutton = document.getElementById("nine-button");
 let plusButton = document.getElementById("plus-button");
 let Equalbutton = document.getElementById("equ-button");
-let SecondNumber = 0;
+let MinusButton = document.getElementById("Minuss-button");
 let Answer = 0;
-let CilckButton = false;
-
-
+let memory = 0;
+let mibut = false;
+let plbut = false;
+let multbut = false;
+let divbut = false;
+let MultButton = document.getElementById("multiply-button");
+let DivButton = document.getElementById("divide-button");
 
 
 //function
@@ -28,20 +32,43 @@ let CilckButton = false;
 function show(val) {
     counter.textContent = val;
 }
-function minus(){
-    CilckButton = true;
+function minus() {
+    memory = number;
+    number = 0;
+    mibut = true;
+    plbut = multbut = divbut = false;
 }
 function plus() {
-    
-    CilckButton = true;
+    memory = number;
+    number = 0;
+    plbut = true;
+    mibut = multbut = divbut = false;
 }
-function equal() {
-    Answer = number + SecondNumber;
-    counter.textContent = Answer;
+    function multiply() {
+        memory = number;
+        number = 0;
+        multbut = true;
+        plbut = mibut = divbut = false;
 
-    number = Answer;
-    SecondNumber = 0;
-    CilckButton = false;
+    }
+    function divide() {
+        memory = number;
+        number = 0;
+        divbut = true;
+        plbut = mibut = multbut = false;
+    }
+
+function equal() {
+     if (plbut) {
+        Answer = memory + number;
+    } else if (mibut) {
+        Answer = memory - number;
+    } else if (multbut) {
+        Answer = memory * number;
+    } else if (divbut) {
+        Answer = memory / number;
+    }
+    show(Answer);
 }
 
 function add1() {
@@ -60,85 +87,45 @@ function minus1() {
     show(number);
 }
 function zero() {
-    if (!CilckButton) {
-        number = number * 10 + 0;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 0;
-        show(SecondNumber);
-    }
+    number = number * 10 + 0;
+    show(number);
+
 }
 function one() {
-    if (!CilckButton) {
-        number = number * 10 + 1;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 1; show(SecondNumber);
-    }
+    number = number * 10 + 1;
+    show(number);
 }
 function two() {
-    if (!CilckButton) {
-        number = number * 10 + 2;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 2; show(SecondNumber);
-    }
+    number = number * 10 + 2;
+    show(number);
 }
 function three() {
-    if (!CilckButton) {
-        number = number * 10 + 3;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 3; show(SecondNumber);
-    }
+    number = number * 10 + 3;
+    show(number);
 }
 function four() {
-    if (!CilckButton) {
-        number = number * 10 + 4;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 4; show(SecondNumber);
-    }
+    number = number * 10 + 4;
+    show(number);
 }
 function five() {
-    if (!CilckButton) {
-        number = number * 10 + 5;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 5; show(SecondNumber);
-    }
+    number = number * 10 + 5;
+    show(number);
 }
 function six() {
-    if (!CilckButton) {
-        number = number * 10 + 6;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 6; show(SecondNumber);
-    }
+    number = number * 10 + 6;
+    show(number);
 }
 function seven() {
-    if (!CilckButton) {
-        number = number * 10 + 7;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 7; show(SecondNumber);
-    }
+    number = number * 10 + 7;
+    show(number);
 }
 function eight() {
-    if (!CilckButton) {
-        number = number * 10 + 8;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 8; show(SecondNumber);
-    }
+    number = number * 10 + 8;
+    show(number);
 }
 function nine() {
-    if (!CilckButton) {
-        number = number * 10 + 9;
-        show(number);
-    } else {
-        SecondNumber = SecondNumber * 10 + 9; show(SecondNumber);
-    }
+    number = number * 10 + 9;
+    show(number);
 }
 
 //evenlistener
@@ -157,3 +144,25 @@ Eightbutton.addEventListener("click", eight);
 Ninebutton.addEventListener("click", nine);
 plusButton.addEventListener("click", plus);
 Equalbutton.addEventListener("click", equal);
+MinusButton.addEventListener("click", minus);
+MultButton.addEventListener("click", multiply);
+DivButton.addEventListener("click", divide);
+
+document.addEventListener("keydown", (event) => {
+if (event.key === "0") zero();
+  if (event.key === "1") one();
+  if (event.key === "2") two();
+  if (event.key === "3") three();
+  if (event.key === "4") four();
+  if (event.key === "5") five();
+  if (event.key === "6") six();
+  if (event.key === "7") seven();
+  if (event.key === "8") eight();
+  if (event.key === "9") nine();
+  if (event.key === "+") plus();
+  if (event.key === "-") minus();
+  if (event.key === "*") multiply();
+  if (event.key === "/") divide();
+  if (event.key === "Enter") equal();
+  if (event.key === "Backspace") clear(); 
+  });
