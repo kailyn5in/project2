@@ -25,12 +25,19 @@ let multbut = false;
 let divbut = false;
 let MultButton = document.getElementById("multiply-button");
 let DivButton = document.getElementById("divide-button");
+let PiButton = document.getElementById("p-btu");
+let mene=0;
 
 
 //function
 
 function show(val) {
     counter.textContent = val;
+}
+function pii(){
+
+
+    show(number);
 }
 function minus() {
     memory = number;
@@ -147,22 +154,4 @@ Equalbutton.addEventListener("click", equal);
 MinusButton.addEventListener("click", minus);
 MultButton.addEventListener("click", multiply);
 DivButton.addEventListener("click", divide);
-
-document.addEventListener("keydown", (event) => {
-if (event.key === "0") zero();
-  if (event.key === "1") one();
-  if (event.key === "2") two();
-  if (event.key === "3") three();
-  if (event.key === "4") four();
-  if (event.key === "5") five();
-  if (event.key === "6") six();
-  if (event.key === "7") seven();
-  if (event.key === "8") eight();
-  if (event.key === "9") nine();
-  if (event.key === "+") plus();
-  if (event.key === "-") minus();
-  if (event.key === "*") multiply();
-  if (event.key === "/") divide();
-  if (event.key === "Enter") equal();
-  if (event.key === "Backspace") clear(); 
-  });
+PiButton.addEventListener("click", pii);
