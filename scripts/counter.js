@@ -25,19 +25,12 @@ let multbut = false;
 let divbut = false;
 let MultButton = document.getElementById("multiply-button");
 let DivButton = document.getElementById("divide-button");
-let PiButton = document.getElementById("p-btu");
-let mene=0;
 
 
 //function
 
 function show(val) {
     counter.textContent = val;
-}
-function pii(){
-
-
-    show(number);
 }
 function minus() {
     memory = number;
@@ -154,4 +147,3 @@ Equalbutton.addEventListener("click", equal);
 MinusButton.addEventListener("click", minus);
 MultButton.addEventListener("click", multiply);
 DivButton.addEventListener("click", divide);
-PiButton.addEventListener("click", pii);
